@@ -1,2 +1,2 @@
 #!/bin/bash
-print("I am {} years old", 5)
+python3 $PYFILE
