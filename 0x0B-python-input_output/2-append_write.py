@@ -1,20 +1,18 @@
 #!/usr/bin/python3
 """
-read method
+Append module
 """
 
 
-def read_lines(filename="", nb_lines=0):
-    """read n lines of text file
+def append_write(filename="", text=""):
+    """Append to file with text
     args:
-        filename: file to read
-        nb_lines: n line
+        filename: add to this object
+        text: string to append
     return:
-        na
+        number of characters added
     """
-    line_num = 0
-    with open(filename, encoding="utf-8") as f:
-        for line in f:
-            if line_num < nb_lines or not nb_lines or nb_lines < 0:
-                print(line, end="")
-            line_num += 1
+
+    with open(filename, mode="a", encoding="utf-8") as f:
+        if f.write(text):
+            return len(text)
